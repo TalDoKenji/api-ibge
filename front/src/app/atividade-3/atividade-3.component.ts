@@ -26,9 +26,7 @@ export class Atividade3Component {
       { label: string; data: number[]; borderWidth: number },
       { label: string; data: number[]; borderWidth: number }
     ];
-  } | null = null; // TODO: USAR PARA FAZER O ULTIMO QUANDO BUSCAR OS DOIS NOMES
-  // USAR O REPLACE DA ATIVIDADE 1 PARA FORMATAR AS LABELS
-  chart: any = [];
+  } | null = null;
 
   constructor(
     private readonly builder: FormBuilder,
@@ -50,7 +48,6 @@ export class Atividade3Component {
     this.form.valueChanges
       .pipe(debounceTime(300))
       .subscribe((form) => {
-        this.data = null
         this.requestIbge(form);
       });
   }

@@ -22,14 +22,16 @@ export class Atividade1Component {
   form: FormGroup<any> = new FormGroup({});
   data: {
     labels: string[];
-    datasets: [{ label: string; data: number[];
-       borderWidth: number }];
+    datasets: [{
+      label: string; data: number[];
+      borderWidth: number
+    }];
   } | null = null;
 
   constructor(
     private readonly builder: FormBuilder,
     private readonly ibgeService: IbgeService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.form = this.builder.group({
@@ -62,7 +64,6 @@ export class Atividade1Component {
 
   requestIbge(form: any) {
     if (!this.form.valid) return;
-    this.data = null;
 
     this.ibgeService
       .findByNomes([form.pessoaUm])

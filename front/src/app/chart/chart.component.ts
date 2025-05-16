@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import Chart from 'chart.js/auto';
 
 @Component({
@@ -8,11 +8,11 @@ import Chart from 'chart.js/auto';
   templateUrl: './chart.component.html',
   styleUrl: './chart.component.scss',
 })
-export class ChartComponent implements OnInit {
+export class ChartComponent implements OnChanges {
   @Input({ required: true }) data: any;
   chart: any = null;
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
 
     this.chart = new Chart('canvas', {
       type: 'bar',
