@@ -1,0 +1,30 @@
+
+<div class="main">
+  <div class="header">
+    <form [formGroup]="form">
+      <span>
+        <select formControlName="atividade">
+          <option value="null" selected="true">Selecione uma atividade</option>
+          <option value="1">Atividade 1</option>
+          <option value="2">Atividade 2</option>
+          <option value="3">Atividade 3</option>
+        </select>
+      </span>
+    </form>
+  </div>
+  <div class="content">
+
+    @if (this.form.get('atividade')?.value == 1) {
+      <atividade-1></atividade-1>
+    } @else if (this.form.get('atividade')?.value == 2) {
+      <atividade-2></atividade-2>
+    } @else if (this.form.get('atividade')?.value == 3) {
+      <atividade-3></atividade-3>
+    } @else {
+      <div>
+        <p>Selecione uma atividade para continuar!</p>
+      </div>
+    }
+
+  </div>
+</div>

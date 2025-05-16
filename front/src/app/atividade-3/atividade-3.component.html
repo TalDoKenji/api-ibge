@@ -1,0 +1,11 @@
+<div>
+    <form [formGroup]="form">
+        <span>
+            <input formControlName="pessoaUm" type="text" placeholder="Informe o nome">
+            <input formControlName="pessoaDois" type="text" placeholder="Informe o segundo nome">
+        </span>
+    </form>
+</div>
+<div style="margin-top: 20px;">
+    <app-chart *ngIf="data" [data]="data"></app-chart>
+</div>
